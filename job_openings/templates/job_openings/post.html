@@ -1,0 +1,271 @@
+{% extends 'job_openings/basics.html' %}
+{% load job_openings_tags %}
+
+{% block title %}
+{{ post.title }}
+{% endblock %}
+
+{% block content %}
+<meta name="description" content="{% if post.desc%}
+{{post.desc}}
+{% endif %}
+{{post.body|slice:'150'}}">
+<link rel="canonical" href="https://theyuvas.com{{ post.get_absolute_url }}">
+{% endblock %}
+{% block body %}
+
+
+<!--//Banner-->
+<div class="banner-post text-white pb-5">
+    <!-- page details -->
+    <div class="breadcrumb-agile  py-2">
+        <ol class="breadcrumb  bg-primary m-0">
+            <li class="breadcrumb-item">
+                <a href="/">Home</a>
+            </li>
+            <li class="breadcrumb-item active text-white" aria-current="page">Post</li>
+        </ol>
+    </div>
+    <!-- //page details -->
+    <div class="container">
+        <div class="p-sm-3">
+            <h5 class="text-center">
+                <strong>Name Of Exam:</strong>
+            </h5>
+
+            <h1 class="w3ls-title text-center font-weight-bold"> {{ post.title }}</h1>
+
+            <div class=" mt-5 justify-content-center">
+                <div class="row justify-content-center">
+                    <div style="align-content: center;" class=" p-0">
+                        <figure class="avatar">
+                            <img src="../../../static/job_openings/images/te2.jpg" class="avatar-img"
+                                 alt="A generic square placeholder image with rounded corners in a figure.">
+                        </figure>
+                    </div>
+                    <div class="p-0">
+                        <p class="avatar-txt text-white">
+                            By Dev Raj Singh ·
+                            <time class="avatar-txt text-white">
+                                Updated On : {{ post.publish }}
+                            </time>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <hr class="mt-0 mb-3"/>
+
+
+        </div>
+
+    <div class="m-sm-4">
+        <p class="text-white">
+    <strong class="font-weight-bold">Short Information : </strong>
+            {% if post.desc %}
+            {{ post.desc }}
+            {% else %}
+            Catch the Job & Exam details for  Recruitment 2020 Notification with complete details on this page.
+            Read the full instruction . Post your question in the comment to get fulfilled with all your Questions
+            related to this exam .
+            {% endif %}
+        </p>
+    </div>
+        </div>
+</div>
+<!--//Banner-->
+
+    <!-- single page -->
+    <div class="single-page py-5 ">
+        <div class="container py-xl-5 py-lg-3">
+            <div class="title-section text-center mb-md-5 mb-4">
+                <h3 class="w3ls-title text-center "> <span>{{ post.title }}</span>
+                </h3>
+            </div>
+            <div class="inner-sec">
+                <div class="row">
+                    <!-- left side -->
+                    <div class="col-lg-8 left-blog-info text-left">
+                        <div class="blog-grid-top">
+
+
+
+
+                            {% if post.image %}
+                            <img alt="{{ post.title }}" class="img img-fluid my-md-5 my-2" src="/media/{{ post.image }}">
+                            {% endif %}
+
+                            {% autoescape on %}
+                                {{ post.body|markdown }}
+                            {% endautoescape %}
+
+                            <!-- //Table -->
+                            <div class="container-fluid bg-white my-2">
+                                <div class="row">
+
+                               {% if link%}
+                                        <table class="table table-hover table-bordered">
+                                            <thead>                                               
+                                            <tr>
+                                                <td colspan="12" class="text-center font-weight-bold text-white bg-info"><h4>Impotant
+                                                    Links:</h4></td>
+                                            </tr>
+
+
+                                            {% for link in link %}
+
+
+                                                <tr>
+                                                    <td colspan="6" class="text-center font-weight-bold"><h4
+                                                            class="text-primary"> {{ link.name }} </h4></td>
+                                                    <td colspan="6" class="text-center font-weight-bold">
+                                                        <a href="{{ link.url }}" class="button-w3ls active mt-4"
+                                                           target="_blank">Click Here
+                                                            <span class="fa fa-caret-right ml-1"
+                                                                  aria-hidden="true"></span></a>
+                                                    </td>
+                                                </tr>
+                                            {% endfor %}
+                                            </thead>
+                                            <tbody>
+
+
+                                            </tbody>
+                                        </table>
+                                    {% endif  %}
+                                </div>
+                            </div>
+                            <!-- Table -->
+                        </div>
+
+                        <div class="comment-top my-lg-5 my-sm-2">
+
+
+
+                            <h4>Comments</h4>
+
+                            {% for comment in comment %}
+                                <div class="media mt-3">
+                                    <a class="d-flex pr-3" href="#">
+                                        <img src="../../../static/job_openings/images/c2.png" alt="" class="img-fluid"/>
+                                    </a>
+                                    <div class="media-body">
+                                        <h5 class="mt-0">{{ comment.name }}</h5>
+                                        <p>{{ comment.message }}</p>
+                                    </div>
+                                </div>
+                            {% endfor %}
+
+                        </div>
+                        <div class="comment-top">
+                            <h4>Leave a Comment</h4>
+                            <div class="comment-bottom">
+                                <form action="#" method="post">
+                                    <div class="form-group">
+                                        <input class="form-control" type="text" name="Name" placeholder="Name"
+                                               required="">
+                                    </div>
+                                    <div class="form-group">
+                                        <input class="form-control" type="email" name="Email" placeholder="Email"
+                                               required="">
+                                    </div>
+                                    <div class="form-group">
+                                        <input class="form-control" type="text" name="Subject" placeholder="Subject"
+                                               required="">
+                                    </div>
+                                    <div class="form-group">
+										<textarea class="form-control" name="Message" placeholder="Message..."
+                                                  required=""></textarea>
+                                    </div>
+                                    <!-- Button trigger modal -->
+                                    {% csrf_token %}
+                                    <button type="submit" class="tn submit-contact mr-auto" data-toggle="modal"
+                                            data-target="#exampleModalCenter">Submit
+                                    </button>
+
+                                </form>
+
+
+                            </div>
+
+
+                        </div>
+                    </div>
+                    <!-- //left side -->
+                    <!-- right side -->
+                    <aside class="col-lg-4 right-blog-con text-right mt-lg-0 mt-5">
+                        <div class="right-blog-info">
+                            <div class="category-story tech-btm p-5">
+                                <div class="row pb-2 mx-auto">
+                                    <h4><strong>Recent Vacancies</strong></h4>
+                                </div>
+                                <div class ='mb-2'>
+<script async src="https://cse.google.com/cse.js?cx=017209185519767169993:tob3qh7ygxi"></script>
+<div class="gcse-search"></div></div>
+                                <div class="row ">
+                                    <div class="card more-story">
+                                        <ul class="list-unstyled ">
+                                        {% for post in all_post|slice:'10' %}
+                                            <li class="border-bottom mb-3 pb-3">
+                                                <img src="../../../static/job_openings/images/newicon.gif" alt=""
+                                                     class="img-fluid"/>
+                                                <a href="{{ post.get_absolute_url }}"
+                                                   class="text-white">{{ post.title }}</a>
+                                            </li>
+                                        {% endfor %}
+                                    </ul>
+
+                                    </div>
+
+
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </aside>
+                    <!-- //right side -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- //single -->
+
+
+    <!-- copyright -->
+    <div class="cpy-right text-center py-3">
+        <p>© 2020 The Yuvas. All rights reserved | Design by
+            <a href="https://theyuvas.com"> The Yuva</a>
+        </p>
+    </div>
+    <!-- //copyright -->
+    <!-- move top icon -->
+    <a href="#home" class="move-top text-center">
+        <span class="fa fa-level-up" aria-hidden="true"></span>
+    </a>
+    <!-- //move top icon -->
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
+         aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Thanks!</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    Your comment will be added after getting verified.
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal -->
+
+
+{% endblock %}

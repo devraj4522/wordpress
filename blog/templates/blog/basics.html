@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    
+{% block title %}
+{% endblock %}
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <link rel = "icon" href = "{%static '/job_openings/images/logo.png' %}" type = "image/x-icon">
+    <script>
+        addEventListener("load", function () {
+            setTimeout(hideURLbar, 0);
+        }, false);
+
+        function hideURLbar() {
+            window.scrollTo(0, 1);
+        }
+    </script>
+    <link href="{% static '/blog/css/bootstrap.css' %}" rel='stylesheet' type='text/css' />
+    <link href="{% static '/blog/css/examples.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static '/blog/css/slider-pro.css' %}" rel='stylesheet' type='text/css' />
+    <link rel="stylesheet" href="{% static '/blog/css/owl.carousel.css' %}" type="text/css" media="all">
+    <link rel="stylesheet" href="{% static '/blog/css/owl.theme.css' %}" type="text/css" media="all">
+    <link href="{% static '/blog/css/nav.css' %}" rel='stylesheet' type='text/css' />
+    <link href="{% static '/blog/css/style.css' %}" rel='stylesheet' type='text/css' />
+    <link href="{% static '/blog/css/style copy.css' %}" rel='stylesheet' type='text/css' />
+    <link href="{% static '/blog/css/fontawesome-all.css' %}" rel="stylesheet">
+    <link href="//fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800" rel="stylesheet">
+</head>
+
+<body>
+
+<!-- navigattions -->
+<div class="py-1 col-12 header-boarder">
+    <div class="container">
+        <div class="nav-content ">
+            <!-- logo -->
+            <p>
+                <a-basics id="logo" class="logo" href="/">
+                    <img src="/static/job_openings/images/logo.png" alt="Theyuvas" class="img-fluid rounded-circle">
+                </a>
+
+            </p>
+            <!-- //logo -->
+            <!-- nav -->
+            <div class="nav_web-dealingsls">
+                <nav>
+                    <label for="drop" class="toggle ml-auto text-white">Menu</label>
+                    <input type="checkbox" id="drop">
+                    <ul class="menu-basics">
+                        <li><a href="https://theyuvas.com">Home</a></li><li><a href="https://theyuvas.com/latest-job/">Latest Job</a></li>
+                        <li><a href="https://theyuvas.com/admit-card/">Admit Card</a></li>
+
+
+                        <li><a href="https://theyuvas.com/result">Results</a></li>
+
+                    <li>
+                            <!-- First Tier Drop Down -->
+                            <label for="drop-3" class="toggle toogle-2">Exams <span class="fa fa-angle-down" aria-hidden="true"></span>
+                            </label>
+                            <a href="#pages">Pages <span class="fa fa-angle-down" aria-hidden="true"></span></a>
+                            <input type="checkbox" id="drop-3">
+                            <ul>
+
+                                <li><a class="drop-text" href="https://theyuvas.com/latest-job/">Latest Exams</a></li>
+                                <li><a class="drop-text" href="https://theyuvas.com/blog/">Blog</a></li>
+
+
+
+                            </ul>
+                        </li></ul></nav>
+            </div>
+            <!-- //nav -->
+        </div>
+    </div>
+</div>
+<!-- navigattions -->
+
+ {% block body %}
+{% endblock  %} 
+
+
+
+
+<!-- footer -->
+    <footer class="py-5">
+		<div class="container py-xl-4">
+			<div class="row footer-top">
+				<div class="col-lg-4 footer-grid_section_1its footer-text">
+					<!-- logo -->
+					<p>
+						<a class="logo text-wh" href="/">
+							<img src="{% static '/job_openings/images/logo.png' %}" alt="Theyuvas" class="img-fluid rounded-circle w-25"><span>The</span> Yuva
+						</a>
+					</p>
+					<!-- //logo -->
+					<p class="mt-lg-4 mt-3 mb-lg-5 mb-4">It is our approach to help students in providing required
+						exams.
+						.Yuva brings 	all
+						study and exams related
+						concepts and skills that will help you to boost your performance. Get Exams and various types
+						of jobs information on The Yuvas . With the
+						Mission	to
+						help	job aspirants and glorious students to be exam ready.
+					Yuva provides  relevant information for exam  need to get selected with the required tips
+						and
+						tricks.</p>
+					<!-- social icons -->
+					<ul class="top-right-info">
+						<li>
+							<p>Follow As:</p>
+						</li>
+						<li class="facebook-w3">
+							<a href="https://www.facebook.com/Theyuvscom-100177954927898/?modal=admin_todo_tour" target="_blank">
+								<span class="fa fa-facebook-f"></span>
+							</a>
+						</li>
+						<li class="twitter-w3">
+							<a href="https://twitter.com/Devraj40845333" target="_blank">
+								<span class="fa fa-twitter"></span>
+							</a>
+						</li>
+						<li class="google-w3">
+							<a href="mailto:rehansingh.4522@gmil.com" target="_blank">
+								<span class="fa fa-google-plus"></span>
+							</a>
+						</li>
+						<li class="dribble-w3">
+							<a href="https://www.instagram.com/singh.devrj/">
+								<span class="fa fa-instagram" target="_blank"></span>
+							</a>
+						</li>
+					</ul>
+					<!-- //social icons -->
+				</div>
+				<div class="col-lg-4 footer-grid_section_1its my-lg-0 my-sm-4 my-4">
+					<div class="footer-title">
+						<h3>Contact Us</h3>
+					</div>
+					<div class="footer-text mt-4">
+						<p>Address : Salt Lake Sector V, Kolkata , India</p>
+						<p class="my-2"><span class="fa fa-phone fa-lg fa-color"></span> : +12 534894364</p>
+						<p><span class="fa fa-envelope fa-lg fa-color"></span><a href="mailto:rehansingh.4522@gmil.com"> rehansingh.4522@gmail.com</a></p>
+					</div>
+					<div class="footer-title mt-4 pt-md-2">
+						<h3>All exams &amp; Admit Card</h3>
+					</div>
+					<ul class="list-unstyled payment-links mt-4">
+						<li>
+							<a href="https://theyuvas.com/latest-job"><img src="{% static '/job_openings/images/jee.jpg' %}" alt="Jee Main Exam"></a>
+						</li>
+						<li>
+							<a href="https://theyuvas.com/latest-job"><img src="{% static '/job_openings/images/railway.png' %}" alt="Sarkari Naukari"></a>
+						</li>
+						<li>
+							<a href="https://theyuvas.com/latest-job"><img src="{% static '/job_openings/images/air.jpg' %}" alt="Airforce Exam"></a>
+						</li>
+						<li>
+							<a href="https://theyuvas.com/latest-job"><img src="{% static '/job_openings/images/sbi.jpg' %}" alt="Jobs and Exams"></a>
+						</li>
+					</ul>
+				</div>
+				<div class="col-lg-4 footer-grid_section_1its my-lg-0 my-sm-4 my-4">
+					<div class="footer-title">
+						<h3>Top Exams</h3>
+					</div>
+					<div class="footer-text mt-4">
+						<p><a href="https://theyuvas.com/contact/"> Contact Us </a></p>
+						<p class="my-2"> <a href="https://theyuvas.com/Disclaimer/"> Disclaimer </a></p>
+						<p><a href="https://theyuvas.com/Privacy-Policy/">Privacy-Policy </a></p>
+					</div>
+					<div class="footer-title mt-4 pt-md-2">
+						<h3> More Stories </h3>
+					</div>
+					<ul class="list-unstyled payment-links mt-4">
+						<li>
+							<a href="https://theyuvas.com" <="" a="">
+						</a></li><a href="https://theyuvas.com" <="" a="">
+						</a><li><a href="https://theyuvas.com" <="" a="">
+							</a><a href="http://www.dmca.com/Protection/Status.aspx?ID=6346b01b-ea40-44c5-a78a-ae0cb15e254c&amp;refurl=http://127.0.0.1:8000/%2Fsearch-results-web-results-yuvas-exam-and-job-indi/" title="DMCA.com Protection Status" class="dmca-badge"> <img src="https://images.dmca.com/Badges/dmca_protected_sml_120al.png?ID=6346b01b-ea40-44c5-a78a-ae0cb15e254c" alt="DMCA.com Protection Status"></a>
+							  <script src="https://images.dmca.com/Badges/DMCABadgeHelper.min.js"> </script>
+						</li>
+						<li>
+							<a href="https://theyuvas.com/"></a>
+						</li>
+					</ul>
+				</div>
+				</div>
+			</div>
+    </footer>
+    <!-- //footer -->
+
+<!-- copyright -->
+<div class="copy_right_w3ls py-4 text-center">
+    <p>© 2020 The Yuva. All rights reserved |TheYuvas. 
+			<a href="http://theyuvas.com/Terms_and_conditions/">Terms And Conditions </a>
+		</p>
+</div>
+<!-- //copyright -->
+
+
+    
+
+    <!--//model-form-->
+
+    <!-- js -->
+    <script src="{% static '/blog/js/jquery-2.2.3.min.js' %}"></script>
+    <!-- menu-basics -->
+    <script src="{% static '/blog/js/index.js' %}"></script>
+    <script src="{% static '/blog/js/modernizr.custom.js' %}"></script>
+    <!-- //menu-basics -->
+    <!--slider-->
+    <script src="{% static '/blog/js/jquery.sliderPro.min.js' %}"></script>
+    <script>
+        $(document).ready(function ($) {
+            $('#example1').sliderPro({
+                width: 1980,
+                height: 800,
+                arrows: true,
+                buttons: false,
+                waitForLayers: true,
+                thumbnailWidth: 270,
+                thumbnailHeight: 100,
+                thumbnailPointer: true,
+                autoplay: false,
+                autoScaleLayers: false,
+                breakpoints: {
+                    500: {
+                        thumbnailWidth: 120,
+                        thumbnailHeight: 50
+                    }
+                }
+            });
+        });
+    </script>
+    <!--//slider-->
+    <!-- stats -->
+		<script src="{% static '/blog/js/jquery.waypoints.min.js' %}"></script>
+		<script src="{% static '/blog/js/jquery.countup.js' %}"></script>
+		<script>
+			$('.counter').countUp();
+		</script>
+    <!-- //stats -->
+
+    <!-- carousel -->
+    <script src="{% static '/blog/js/owl.carousel.js' %}"></script>
+    <script>
+        $(document).ready(function () {
+            $('.owl-carousel').owlCarousel({
+                loop: true,
+                margin: 10,
+                responsiveClass: true,
+                responsive: {
+                    0: {
+                        items: 1,
+                        nav: true
+                    },
+                    600: {
+                        items: 2,
+                        nav: false
+                    },
+                    900: {
+                        items: 3,
+                        nav: false
+                    },
+                    1000: {
+                        items: 4,
+                        nav: true,
+                        loop: false,
+                        margin: 20
+                    }
+                }
+            })
+        })
+    </script>
+    <!-- //carousel -->
+    <!-- //js -->
+    <script src="{% static '/blog/js/bootstrap.js' %}"></script>
+    <!--/ start-smoth-scrolling -->
+    <script src="{% static '/blog/js/move-top.js' %}"></script>
+    <script src="{% static '/blog/js/easing.js' %}"></script>
+    <script>
+        jQuery(document).ready(function ($) {
+            $(".scroll").click(function (event) {
+                event.preventDefault();
+                $('html,body').animate({
+                    scrollTop: $(this.hash).offset().top
+                }, 900);
+            });
+        });
+    </script>
+    <script>
+        $(document).ready(function () {
+            /*
+            						var defaults = {
+            							  containerID: 'toTop', // fading element id
+            							containerHoverID: 'toTopHover', // fading element hover id
+            							scrollSpeed: 1200,
+            							easingType: 'linear' 
+            						 };
+            						*/
+
+            $().UItoTop({
+                easingType: 'easeOutQuart'
+            });
+
+        });
+    </script>
+    <!--// end-smoth-scrolling -->
+    
+
+    
+</body>
+
+</html>

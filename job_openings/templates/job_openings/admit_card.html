@@ -1,0 +1,125 @@
+{% extends "job_openings/basics.html" %}
+{% load job_openings_tags %}
+{% block title %}
+
+Admit Card - Theyuvas
+{% endblock %}
+
+{% block content %}
+<meta name="description"
+      content="Latest Online Admit Card(2020) Theyuvas.com Theyuvas सरकारी नौकरी, Latest Result - 2020, SSC, Bank, Railway,TheYuvas , The Yuva, Police, UPPSC, UPSSSC  Other Jobs Results, Government Jobs Online Form, Sarkari Naukri">
+<link rel="canonical" href="https://theyuvas.com/admit-card/">
+{% endblock %}
+
+{% block body %}
+
+	<!-- page details -->
+	<div class="banner-post text-white pb-5">
+    <!-- page details -->
+    <div class="breadcrumb-agile  py-2">
+        <ol class="breadcrumb  bg-primary m-0">
+            <li class="breadcrumb-item">
+                <a href="/">Home</a>
+            </li>
+            <li class="breadcrumb-item active text-white" aria-current="page">Post</li>
+        </ol>
+    </div>
+    <!-- //page details -->
+    <div class="container">
+        <div class="p-sm-3">
+            <h5 class="text-center">
+                <strong>Admit Card Info:</strong>
+            </h5>
+
+            <h1 class="w3ls-title text-center font-weight-bold"> Admit Cards for all Jobs & Exams– Released and
+                Upcoming
+                Admit Cards Information</h1>
+
+            <div class=" mt-5 justify-content-center">
+                <div class="row justify-content-center">
+                    <div style="align-content: center;" class=" p-0">
+                        <figure class="avatar">
+                            <img src="../../../static/job_openings/images/te2.jpg" class="avatar-img" alt="A generic square placeholder image with rounded corners in a figure.">
+                        </figure>
+                    </div>
+                    <div class="p-0">
+                        <p class="avatar-txt text-white">
+                            By Dev Raj Singh ·
+                            <time class="avatar-txt text-white">
+                                Updated On : March 8, 2020, 2:30 p.m
+                            </time>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <hr class="mt-0 mb-3">
+
+
+        </div>
+
+    <div class="m-sm-4">
+        <p class="text-white">
+    Join The Yuvas 📧 newsletter to get  the latest
+           job information about Jobs Exams and Admit Card for profitable 💸 way of studying.
+            Leave the shackle ⛓ of 9-6
+            study culture on theyuvas.com . ✅
+        </p>
+    </div>
+        </div>
+</div>
+	<!-- //page details -->
+
+<!-- Table -->
+<div class="container mb-3 mt-5">
+        <table class="table  table-bordered table-light">
+            <thead>
+            <tr class="table-warning ">
+                <th scope="col-sm-6 col-lg-4" colspan=1 class=" font-weight-bold text-center"><h3 class="w3ls-title text-center">Admit  <span>Card</span></h3></th>
+            </tr>
+            </thead>
+                <tbody>
+
+                    <tr>
+                    <td>
+                    <ul>
+                        {% for admit_card in admit_card %}
+                        <li class ='my-lg-4 mx-lg-4 m-2 link_color'><a class='link_color' href="{{ admit_card.get_absolute_url }}">{{ admit_card.title }}</li></a>{% endfor %}
+                    </ul>
+                    </td>
+					</tr>
+                    </tbody>
+        </table>
+</div>
+<!-- Table -->
+
+<!--Latest Articles-->
+<h3 class="w3ls-title text-danger text-center mt-5 ">Recent  Admit Cards</h3>
+{% for post in admit_card|slice:'10' %}
+<div class="my-5 container">
+    <div class="post-latest mx-5">
+        <div class="latest-title">
+            <h3 class="text-center latest-title text-primary mt-5">{{ post.title }}</h2>
+        </div>
+        <div class="p-3 my-3">
+            {% if post.image %}
+            <img alt="{{ post.title }}" class="card-img-top" src="/media/{{post.image}}">
+            {% endif %}
+            <div class='container p-sm-3 m-sm-3 '>
+                {{ post.body|truncatewords_html:100|markdown }}
+            </div>
+
+        </div>
+        <div class="pb-md-5 p-3">
+        <a  href="{{ post.get_absolute_url }}">
+                <button class='btn submit mb-4'>
+                View More
+                </button>
+            </a>
+        </div>
+    </div>
+</div>
+{% endfor %}
+<!--Latest Articles-->
+
+
+	{% endblock %}

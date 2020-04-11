@@ -1,0 +1,132 @@
+{% extends "job_openings/basics.html" %}
+{% load job_openings_tags %}
+{% block title %}
+Latest Job Vaccebcy - 2020
+{% endblock %}
+
+{% block content %}
+<meta name="description" content=" The Yuva TheYuvas.com Various Post Jobs In India - Apply Form (New Updated), सरकारी नौकरी, Latest Jobs - 2020, SSC, Bank, Railway,TheYuvas ,Police, UPPSC, UPSSSC  Other Jobs Results, Government Jobs Online Form, Sarkari Naukri">
+<link rel="canonical" href="https://theyuvas.com/admit-card/">
+{% endblock %}
+
+{% block body %}
+
+    
+			<!-- page details -->
+	<div class="banner-post text-white pb-5">
+    <!-- page details -->
+    <div class="breadcrumb-agile  py-2">
+        <ol class="breadcrumb  bg-primary m-0">
+            <li class="breadcrumb-item">
+                <a href="/">Home</a>
+            </li>
+            <li class="breadcrumb-item active text-white" aria-current="page">Post</li>
+        </ol>
+    </div>
+    <!-- //page details -->
+    <div class="container">
+        <div class="p-sm-3">
+            <h5 class="text-center">
+                <strong>Result Info:</strong>
+            </h5>
+
+            <h1 class="w3ls-title text-center font-weight-bold">All India Latest Jobs 2020 </h1>
+
+            <div class=" mt-5 justify-content-center">
+                <div class="row justify-content-center">
+                    <div style="align-content: center;" class=" p-0">
+                        <figure class="avatar">
+                            <img src="../../../static/job_openings/images/te2.jpg" class="avatar-img" alt="A generic square placeholder image with rounded corners in a figure.">
+                        </figure>
+                    </div>
+                    <div class="p-0">
+                        <p class="avatar-txt text-white">
+                            By Dev Raj Singh ·
+                            <time class="avatar-txt text-white">
+                                Updated On : March 8, 2020, 2:30 p.m
+                            </time>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <hr class="mt-0 mb-3">
+
+
+        </div>
+
+    <div class="m-sm-4">
+        <p class="text-white">
+    Join The Yuvas 📧 newsletter to get  the latest
+           Government Jobs 2020 of competitive Exams and  Check Results Upcoming.
+            Here, we are providing the list of latest Govt Jobs with full information,
+            last date to apply online for
+            all Government Jobs and Private Jobs on Theyuvas.com.
+             Aspirants can
+            also get the All India Job notification time to time alerts. 💸  Category of various jobs are created for
+            easier access
+            is provided ✅ on this portal. We are here to provide the regular updates for all such notifications.As
+            exam season jostling in, it is important for all the aspirants to know the exam related important dates
+            associated
+            with the upcoming Government Exams.
+        </p>
+    </div>
+        </div>
+</div>
+	<!-- //page details -->
+
+	
+	<!-- Table -->
+<div class="container my-3 ">
+        <table class="table  table-bordered table-light">
+            <thead>
+            <tr class="table-warning ">
+                <th scope="col-sm-6 col-lg-4" colspan=1 class=" font-weight-bold text-center"><h3 class="w3ls-title text-center">Latest  <span>Jobs</span></h3></th>
+            </tr>
+            </thead>
+                <tbody>
+
+                    <tr>
+                    <td>
+                    <ul>
+                        {% for latest_job in latest_job %}
+                        <li class ='my-lg-4 mx-lg-4 m-2 link_color'><a class='link_color' href="{{ latest_job.get_absolute_url }}">{{latest_job.title }}</a></li>
+                        {% endfor %}
+                    </ul>
+                    </td>
+					</tr>
+                    </tbody>
+        </table>
+	</div>
+<!-- Table -->
+
+<!--Latest Articles-->
+<h3 class="w3ls-title text-danger text-center mt-5 ">Recent  Jobs & Exams </h3>
+
+{% for post in latest_job|slice:'10' %}
+<div class="my-5 container">
+    <div class="post-latest mx-5">
+        <div class="latest-title">
+            <h3 class="text-center latest-title text-primary mt-5">{{ post.title }}</h2>
+        </div>
+        <div class="p-3 my-3">
+            {% if post.image %}
+            <img alt="{{ post.title }}" class="card-img-top" src="/media/{{post.image}}">
+            {% endif %}
+            <div class='container p-sm-3 m-sm-3 '>
+                {{ post.body|truncatewords_html:100|markdown }}
+            </div>
+
+        </div>
+        <div class="pb-md-5 p-3">
+            <a  href="{{ post.get_absolute_url }}">
+                <button class='btn submit mb-4'>
+                View More
+                </button>
+            </a>
+        </div>
+    </div>
+</div>
+{% endfor %}
+
+
+{% endblock %}

@@ -1,0 +1,138 @@
+{% extends 'blog/basics.html' %}
+{% load job_openings_tags %}
+{% block title %}
+<title>{{ post.title }}</title>
+<meta name="description" content="{{ post.meta }} {{ post.desc|slice:'150' }}">
+    <link rel="canonical" href="https://theyuvas.com/blog/{{ post.slug }}">
+{% endblock title %}
+{% block body %}
+
+<!--//Header Banner-->
+<section class="offer-service-w3ls py-md-5 py-4">
+        <div class="container">
+            <div class="inner-sec-wthree-w3ls py-md-5 py-4">
+                <h3 class="tittle-w3l text-center mb-lg-5 mb-3">
+                    <span class="text-white">Jobs & Exams</span>
+                    {{ post.title }}</h3>
+  <div class="row justify-content-center">
+                    <div style="align-content: center;" class=" p-0">
+                        <figure class="avatar">
+                            <img src="../../../static/job_openings/images/te2.jpg" class="avatar-img" alt="{{ post.title }}">
+                        </figure>
+                    </div>
+                    <div class="p-0">
+                        <p class="avatar-txt text-white">
+                            By Dev Raj Singh ·
+                            <time class="avatar-txt text-white">
+                                Updated On : {{ post.publish.date }}
+                            </time>
+                        </p>
+                    </div>
+                </div>
+<hr class="mt-0 color-white mb-3" style="border-top: 1px solid #fff;">
+                
+                </div>
+    <div class="m-sm-4">
+        <p class="text-white">
+    <strong>Coverage: </strong>{{ post.desc }}
+        </p>
+    </div>
+            </div>
+        
+    </section>
+    <!--//Header Banner-->
+
+    <!--banner-bottom-w3layouts-->
+    <section class="banner-bottom-w3layouts py-md-5 py-4">
+        <div class="container">
+            <div class="inner-sec-wthree-w3ls py-md-5 py-4">
+                <h1 class= 'text-center'style="text-shadow: 2px 2px 2px rgba(41, 41, 41, 0.26);
+                font-size: 3em;color: #3d3e48;font-weight: 600;">
+                    {{ post.title }}</h1>
+                <div class="row mt-5">
+                    <div class="col-lg-6 about-img">
+                        <img src="/media/{{ post.image }}" alt="{{ post.title }}" class="img-fluid">
+                    </div>
+                    <div class="col-md-6 aboutright">
+                        <h3>{{ post.heading }}</h3>
+                        <h4>{{ post.meta }}</h4>
+                        <p>{{ post.desc }}  </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+         
+     <!--/events-->
+    <section class="banner-bottom-w3layouts bg-light py-md-5 py-4">
+        <div class="container">
+            <div class="inner-sec-wthree-w3ls py-md-5 py-4">
+                <h3 class="tittle-w3l text-center mb-lg-5 mb-3">
+                    <span>More</span>{{ post.heading }} </h3>
+                <div class="row choose-main ">
+                    <div class="col-lg-9 mx-auto galsses-grid-right">
+
+                        <!--<h5>
+                            <span class="post-color">21</span> May 2018</h5>
+                        <h4 class="post my-3">Lorem ipsum dolor sit amet</h4>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit sedc dnmo eiusmod tempor incididunt ut consectetur
+                            adipisicing elit sedc labore et dolore magna aliqua uta enim ad minim.. </p>-->
+                            {{ post.body|markdown }}
+                    </div>
+                    
+                    <div class="comment-top my-lg-5 my-sm-2 col-12 col-md-9">
+
+
+                             {% if comment %}
+                            <h4 class='my-lg-5 my-3'>Comments</h4>
+                           
+                            {% for comment in comment %}
+                                <div class="media mt-3">
+                                    <a class="d-flex pr-3" href="#">
+                                        <img src="../../../static/job_openings/images/c2.png" alt=" comment - {{post.title}}" class="img-fluid"/>
+                                    </a>
+                                    <div class="media-body">
+                                        <h5 class="mt-0">{{ comment.name }}</h5>
+                                        <p>{{ comment.message }}</p>
+                                    </div>
+                                </div>
+                            {% endfor %}
+                            {% endif %}
+
+                        </div>
+
+                        <div class="comment-top my-lg-5 col-md-7 col-12 my-sm-2">
+                            <h4>Leave a Comment</h4>
+                            <div class="comment-bottom">
+                                <form action="#" method="post">
+                                
+                                    <div class="form-group">
+                                        <input class="form-control" type="text" name="Name" placeholder="Name" required="">
+                                    </div>
+                                    <div class="form-group">
+                                        <input class="form-control" type="email" name="Email" placeholder="Email" required="">
+                                    </div>
+                                    <div class="form-group">
+										<textarea class="form-control" name="Message" placeholder="Message..." required=""></textarea>
+                                    </div>
+                                    <!-- Button trigger modal -->
+
+                                    <input type="hidden" name="csrfmiddlewaretoken" value="KtLwoBD5YL16qKExOK9pMkFAyagw6knotTMImpVIP4nB9P35vj3GopaEVGJDKsnl">
+                                    <button type="submit" class="tn submit-contact mr-auto" data-toggle="modal" data-target="#exampleModalCenter">Submit
+                                    </button>
+                                    {% csrf_token %}
+                                </form>
+
+
+                            </div>
+
+
+                        </div>
+                </div>
+            </div>
+        </div>
+    </section>
+     <!--//events-->
+   				
+    {% endblock body %}

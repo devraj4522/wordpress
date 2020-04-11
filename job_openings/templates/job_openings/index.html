@@ -1,0 +1,250 @@
+{% extends "job_openings/basics.html" %}
+{% load static %}
+{% load  cache %}
+{% block title %}
+The Yuvas - Exam And Job in India
+{% endblock %}
+{% block content %}
+
+
+<meta name="description"
+      content="Latest Online Form theyuvas.com सरकारी नौकरी, All Latest Result & Admit Card - 2020, SSC Exam , Bank, Railway,TheYuvas ,Police, UPPSC, UPSSSC  Other Jobs Results, Government Jobs Online Form, Sarkari Naukri , Governmnet exams">
+<link rel="canonical" href="https://theyuvas.com/">
+{% endblock %}
+{% block body %}
+<div class="baneer-w3ls">
+    <div class="row no-gutters">
+        <div class="col-xl-5 col-lg-6 ">
+            <div class="banner-left-w3">
+                <div class="container">
+                    <div class="banner-info_agile_w3ls ">
+                        <h5>Ultimate Exam Guide </h5>
+                        <h1 class="text-da mb-4"><span style="color: #ff3f34;">The  </span> Yuva<p class="font-weight-bold"></h1>
+                            <h3>
+                                <a href="" class="typewrite" data-period="2000"
+                                   data-type='[ "Government Jobs.", "All Latest Forms.", "Get Result First.", "Download Your Admit Card." ]'>
+
+                                </a>
+                            </h3>
+                        <p>Yuva brings all information and materials for students and youth.</p>
+                        <a href="https://theyuvas.com/blog/" class="button-w3ls active mt-5">Read More
+                            <span class="fa fa-caret-right ml-1" aria-hidden="true"></span>
+                        </a>
+                        <a href="latest-job" class="button-w3ls mt-5 ml-2">Apply Now
+                            <span class="fa fa-caret-right ml-1" aria-hidden="true"></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="d-none d-md-flex  col-lg-6 callbacks_container">
+            <!-- banner slider -->
+            <div class="csslider infinity" id="slider1">
+
+                <div class="banner-top3"></div>
+
+
+            </div>
+        </div>
+        <!-- //banner slider -->
+    </div>
+</div>
+<!-- //banner -->
+<div class="clearfix"></div>
+
+
+<!-- //Table -->
+<div class="container my-5" style="height: auto !important;">
+    <div class="row my-5 justify-content-center d-flex align-items-start p-1" style="height: auto !important;">
+        <div class="mb-2 col-sm-4 col-6 p-0 " style="height: auto !important;">
+            <div id="" class=" pl-0 mr-1 border border-dark">
+                <div class="row d-flex flex-column text-white header-index p-0 m-0">
+                    <h6 class="pt-1" style="text-align:center">Admit Card</h6>
+                </div>
+                <div class="bg-white">
+                <ul class="pl-4 link">
+                        {% for post in admit_card|slice:'10' %}
+                            <li class="mb-2">
+                        <a href="{{ post.get_absolute_url }}" class="text-blog-single">
+                        {{ post.title}}
+                                    </a>
+                            <br>
+                            </li>
+                        {% endfor %}
+                </ul>
+                <a href="https://theyuvas.com/admit-card/">
+                <button type="submit" class=" btn btn-primary mx-auto d-flex justify-content-center">View More</button></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="mb-2 col-sm-4 col-6 p-0 " style="height: auto !important;">
+            <div id="" class=" pl-0 mr-1 border border-dark ">
+                <div class="row d-flex flex-column text-white bg-primary p-0 m-0">
+                    <h6 class="pt-1" style="text-align:center">Latest Result</h6>
+                </div>
+                <div class="bg-white">
+                <ul class="pl-4 link">
+                        {% for post in result|slice:'10' %}
+                            <li class="mb-2">
+                        <a href="{{ post.get_absolute_url }}" class="text-blog-single">
+                        {{ post.title}}
+                                    </a>
+                            <br>
+                            </li>
+                        {% endfor %}
+                </ul>
+                <a href="https://theyuvas.com/result/">
+                <button type="submit" class=" btn btn-primary mx-auto d-flex justify-content-center">View More</button></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="mb-2 col-sm-4 col p-0 " style="height: auto !important;">
+            <div id="latest-result" class=" pl-0 mr-1 border border-dark"  >
+                <div class="row d-flex flex-column text-white bg-success p-0 m-0">
+                    <h6 class="pt-1" style="text-align:center">Latest Job</h6>
+                </div>
+                <div class="bg-white">
+                <ul class="pl-4 link">
+                         {% for entery in entery|slice:'10' %}
+                            <li class="mb-2">
+                                <a href="{{ entery.get_absolute_url }}" class="text-blog-single">
+                        {{ entery.title }}
+                                    </a>
+                            <br>
+                            </li>
+                        {% endfor %}
+                </ul>
+                <a href="https://theyuvas.com/latest-job/">
+                <button type="submit" class=" btn btn-primary mx-auto d-flex justify-content-center">View More</button></a>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+    <!-- Table -->
+<!-- blog -->
+<section class="blog_w3ls py-5" id="blog">
+    <div class="container py-xl-5 py-lg-3">
+        <div class="title-section text-center mb-md-5 mb-4">
+            <p class="w3ls-title-sub">Blog</p>
+            <h3 class="w3ls-title mb-3">Our Latest <span> Exam Posts</span></h3>
+            <p class="titile-para-text mx-auto">Yuva provides students the required guidelines
+                for exams and approach to emerge as strength.
+                Yuva Brings information for all exams ,tips and tricks.</p>
+        </div>
+        <div class="row">
+            <!-- blog grid -->
+            <div class="col-lg-4 col-md-6">
+                <div class="card ">
+                    <div class="card-header p-0">
+                        <a href="/latest-job">
+                        
+                            <img src="{%static '/job_openings/images/blog1.png' %}" class="card-img-bottom img-fluid"
+                                 alt="image">
+                        </a>
+                        <img src="{%static '/job_openings/images/te1.jpg' %}" alt=""
+                             class="img-blog rounded-circle img-fluid">
+                    </div>
+                    <div class="card-body text-center pt-5 mt-2">
+                        <h5 class="blog-title card-title mb-2"><a href="/latest-job">Government Job</a>
+                        <span class="fa  fa-pencil"></span>
+                        </h5>
+                        <div class="blog_w3icon border-top border-bottom py-1 mb-3">
+                                <span>
+                                    Massive Job Program - Nov 12</span>
+                        </div>
+                        <p>All latest  Government Job  Get More Details .</p>
+                        <a href="/latest-job" class="button-w3ls mt-4">Read More
+                            <span class="fa fa-caret-right ml-1" aria-hidden="true"></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!-- //blog grid -->
+            <!-- blog grid -->
+            <div class="col-lg-4 col-md-6">
+                <div class="card ">
+                    <div class="card-header p-0">
+                        <a href="https://theyuvas.com/bssc-inter-level-cc-mains-exam-online-form-2020-out/">
+                            <img src="{%static '/job_openings/images/blog2.png' %}" class="card-img-bottom img-fluid"
+                                 alt="image">
+                        </a>
+                        <img src="{%static '/job_openings/images/te2.jpg' %}" alt=""
+                             class="img-blog rounded-circle img-fluid">
+                    </div>
+                    <div class="card-body text-center pt-5 mt-2">
+                        <h5 class="blog-title card-title mb-2"><a href="#">Dev Raj Singh</a></h5>
+                        <div class="blog_w3icon border-top border-bottom py-1 mb-3">
+                                <span>
+                                   Blog Posts  - Nov 15</span>
+                        </div>
+                        <p>Yuva aims to enhance Yuth to create a strong and healthy generation.</p>
+                        <a href="https://theyuvas.com/blog/" class="button-w3ls active mt-4">Read More
+                            <span class="fa fa-caret-right ml-1" aria-hidden="true"></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!-- //blog grid -->
+            <!-- blog grid -->
+            <div class="col-lg-4 col-md-6 mt-lg-0 mt-4">
+                <div class="card ">
+                    <div class="card-header p-0">
+                        <a href="/result">
+                            <img src="{%static '/job_openings/images/blog3.png' %}" class="card-img-bottom img-fluid"
+                                 alt="image">
+                        </a>
+                        <img src="{%static '/job_openings/images/te3.jpg' %}" alt=""
+                             class="img-blog rounded-circle img-fluid">
+                    </div>
+                    <div class="card-body text-center pt-5 mt-2">
+                        <h5 class="blog-title card-title mb-2"><a href="/result">Results</a></h5>
+                        <div class="blog_w3icon border-top border-bottom py-1 mb-3">
+                                <span>
+                                    New Release - Nov 20</span>
+                        </div>
+                        <p>Most trusted portal for checking online results of 
+                         entrance exams.</p>
+                        <a href="/result" class="button-w3ls mt-4">Read More
+                            <span class="fa fa-caret-right ml-1" aria-hidden="true"></span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!-- //blog grid -->
+        </div>
+    </div>
+</section>
+<!-- //blog -->
+
+
+<!-- newsletter -->
+<section class="subscribe-main py-5">
+    <div class="container py-xl-5 py-3">
+        <div class="row pb-lg-4 pt-lg-5">
+            <div class="col-lg-6 col-md-9 text-center">
+                <h3 class="w3ls-title mb-2">Enter your email & we'll send you the best exams updates</h3>
+                <p class="mb-xl-5 mb-4">Get all job and exam information first on Yuva!</p>
+                <form action="#" method="post" class="d-flex newsletter-info">
+                    {% csrf_token %}
+                    <input type="email" name="subscribe" placeholder="Enter your Email..." required="">
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+            <div class="col-lg-6 col-md-3">
+
+            </div>
+        </div>
+        <img src="{%static '/job_openings/images/sub.png'  %}" alt='' class="img-fluid sub-img">
+    </div>
+</section>
+<!-- //newsletter -->
+
+<script src="{%static '/job_openings/javascript/main.js' %}" ></script>
+
+
+{% endblock %}
